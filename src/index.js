@@ -36,3 +36,11 @@ module.exports = function toReadable (number) {
   const result = (hundreds + (hundreds && tensAndUnits ? ' and ' : '') + tensAndUnits).trim();
   return result.replace(' and', '');
 }
+
+
+
+
+
+
+
+
