@@ -17,7 +17,9 @@ module.exports = function toReadable (number) {
   };
 
   const convertTensAndUnits = (num) => {
-    if (num % 100 === 0) {
+    if (num === 10) {
+      return 'ten';
+    } else if (num % 100 === 0) {
       return '';
     } else if (num < 10) {
       return getUnits(num);
@@ -32,15 +34,6 @@ module.exports = function toReadable (number) {
 
   const hundreds = convertHundreds(number);
   const tensAndUnits = convertTensAndUnits(number % 100);
-
   const result = (hundreds + (hundreds && tensAndUnits ? ' and ' : '') + tensAndUnits).trim();
   return result.replace(' and', '');
-}
-
-
-
-
-
-
-
-
+};
